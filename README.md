@@ -1,3 +1,38 @@
+## Using Conda on Windows for running train.py:
+1. Ensure that you have the right cudnn and cuda versions compatible with the latest version of tensorflow <br>
+(I had CUDA v11.2 that I was using with Pytorch and that created havoc with my installation)
+```
+conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0
+```
+
+2. Install tensorflow <br>
+Note: 2.10 is the last version of tensorflow released for Windows. For future versions, we need to use WSL or one of the Cloud services.
+```
+python3 -m pip install tensorflow
+```
+3. Git clone this repository:
+This repo has been forked from [nshepperd](https://github.com/nshepperd) to use his brilliant train.py file. Main update is to include the "src" folder to the sys path for smooth running in the conda CLI
+```
+git clone https://github.com/SwamiKannan/gpt-2.git 
+```
+
+
+4. Installing all the requirements
+```
+cd gpt-2
+pip3 install -r requirements.txt
+```
+
+5. Download the actual model
+```
+python3 download_model.py 345M 
+```
+6. Training the model (fine-tuning)
+I tried using the default optimizer (Adam) and the default learning rate but it destroyed my GPU with OOM messages (also exhausted the free Colab account usage). So used the SGD optimizer with a lr of 0.0006
+```
+train.py --dataset <data path> --model_name 345M --optimizer sgd --learning_rate 0.0006 (using 345M instead of '345M' helps resolve the path name when creating the appropriate directories for checkpoints
+```
+
 ## Fine tuning on custom datasets
 
 Reference:  ["Beginner’s Guide to Retrain GPT-2 (117M) to Generate Custom Text Content"](https://medium.com/@ngwaifoong92/beginners-guide-to-retrain-gpt-2-117m-to-generate-custom-text-content-8bb5363d8b7f)
