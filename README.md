@@ -23,7 +23,8 @@ cd gpt-2
 pip3 install -r requirements.txt
 ```
 
-5. Download the actual model
+5. Download the actual model <br>
+As per the model card, the fourth and largest GPT-2 version has 7.5 billion parameters. Other "sizes" include 124 million, 355 million, and 774 million parameter models. I have used the 355 million parameter model (but referred by name as 3<b>4</b>5M)
 ```
 python3 download_model.py 345M 
 ```
