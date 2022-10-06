@@ -11,7 +11,8 @@ Note: 2.10 is the last version of tensorflow released for Windows. For future ve
 python3 -m pip install tensorflow
 ```
 3. Git clone this repository:
-This repo has been forked from [nshepperd](https://github.com/nshepperd) to use his brilliant train.py file. Main update is to include the "src" folder to the sys path for smooth running in the conda CLI
+This repo has been forked from [nshepperd](https://github.com/nshepperd) to use his brilliant train.py file.<br>
+Main update is to include the "src" folder to the sys path for trouble-free execution in the conda CLI
 ```
 git clone https://github.com/SwamiKannan/gpt-2.git 
 ```
