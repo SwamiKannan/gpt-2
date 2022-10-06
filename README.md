@@ -1,4 +1,4 @@
-## Using Conda on Windows for running train.py:
+## Using Conda on Windows to train the GPT model:
 1. Ensure that you have the right cudnn and cuda versions compatible with the latest version of tensorflow <br>
 (I had CUDA v11.2 that I was using with Pytorch and that created havoc with my installation)
 ```
