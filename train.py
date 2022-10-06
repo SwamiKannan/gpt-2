@@ -10,6 +10,8 @@ import tensorflow.compat.v1 as tf
 import tensorflow as tf2
 import time
 import tqdm
+import sys
+sys.path.insert(1, 'src')
 
 if tf.VERSION >= '2':
     tf.disable_eager_execution()
